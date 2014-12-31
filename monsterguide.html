@@ -91,6 +91,7 @@
     
     #monsterTable td {
 	border:1px !important;
+	border-right-width:1px !important;
     }
     </style>
 <!-- START JSON Code-->
@@ -548,7 +549,7 @@ function initialize(fusionData) {
 	    }
 	    /*Card HTML output*/
 	      var ovHTML = 
-	      '<table class="table table-responsive table-bordered table-condensed small" style="border-top:0px;border:1px sold #EEEEEE;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
+	      '<table id="monsterTable" class="table table-bordered table-condensed small" style="border-top:0px;border:1px sold #EEEEEE;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
 	      +'<td colspan="4" style="border:0px;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
 	      ovHTML+='<tr><td colspan="5" class="purple"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
 	      /*strikeshot*/
