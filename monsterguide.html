@@ -88,9 +88,8 @@
 	padding-left: 7px;
 	padding-right: 15px;
     }
-    
     #monsterTable td {
-	border:1px !important;
+	border:1px solid #DDD !important;
 	border-right-width:1px !important;
     }
     </style>
@@ -549,8 +548,8 @@ function initialize(fusionData) {
 	    }
 	    /*Card HTML output*/
 	      var ovHTML = 
-	      '<table id="monsterTable" class="table table-bordered table-condensed small" style="border-top:0px;border:1px sold #EEEEEE;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
-	      +'<td colspan="4" style="border:0px;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
+	      '<table id="monsterTable" class="table table-bordered table-condensed small" style="border-top-width:0px !important;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
+	      +'<td colspan="4" style="border:0px !important;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
 	      ovHTML+='<tr><td colspan="5" class="purple"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
 	      /*strikeshot*/
 	      ovHTML+='<tr><td class="active"><b class="visible-xs-block">SS</b><b class="hidden-xs">Strike Shot</b></td><td colspan="4">'+ovdata2[0]['strikeshot']+" "+ovdata2[0]['strikeshot cooldown']+'</td></tr>';
