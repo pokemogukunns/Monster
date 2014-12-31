@@ -195,10 +195,10 @@ function initialize(fusionData) {
   /*Xtra Columns to hide by resolution*/
   if ( $( document ).width() >= 1600 ) {
     var xtraDefCol=[]; var pLength=100;
-  } else if ( ( $( document ).width() < 1600 ) && ( $( document ).width() >= 1100 ) ) { var xtraDefCol=[3,6,7,8,12,16,19]; var pLength=100; 
-  } else if ( ( $( document ).width() < 1100 ) && ( $( document ).width() >= 800 ) ) { var xtraDefCol=[3,6,7,8,11,12,15,16,18,19]; var pLength=100;
-  } else if ( ( $( document ).width() < 800 ) && ( $( document ).width() >= 500 ) ) { var xtraDefCol=[3,6,7,8,9,10,11,12,13,14,15,16,17,18,19]; var pLength=100;
-  } else { var xtraDefCol=[2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]; var pLength=50; }
+  } else if ( ( $( document ).width() < 1600 ) && ( $( document ).width() >= 1100 ) ) { var xtraDefCol=[12,13,14]; var pLength=100; 
+  } else if ( ( $( document ).width() < 1100 ) && ( $( document ).width() >= 800 ) ) { var xtraDefCol=[9,10,11,12,13,14]; var pLength=100;
+  } else if ( ( $( document ).width() < 800 ) && ( $( document ).width() >= 500 ) ) { var xtraDefCol=[9,10,11,12,13,14]; var pLength=100;
+  } else { var xtraDefCol=[9,10,11,12,13,14,15,16,17,18]; var pLength=50; }
   
 	/*Check for latest ver of Data with UBB*/
 	if (fusionData.columns.indexOf("ID")==-1) {
@@ -313,11 +313,11 @@ function initialize(fusionData) {
 		/*using data instead of render to set DATA for cache */
 		{ "targets": [ 1 ],"orderable": false, "width":"40",
 		"render": function (imgSource, type, cRow, full )  {
-			return '<a href="#" class="favIconLink" value="'+cRow[fusionData.columns.indexOf("Name")]+'">'+'<img src="'+imgSource+'" width="35" height="35" alt="'+cRow[fusionData.columns.indexOf("Name")]+'"/></a>';
+			return '<a href="#" class="favIconLink" value="'+cRow[fusionData.columns.indexOf("Name")]+'">'+'<img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+imgSource+'.jpg" width="35" height="35" title="'+cRow[fusionData.columns.indexOf("Name")]+'"/></a>';
 		    }
 		},
 		/*Rarity*/
-		{ "targets":[ 5 ], "width":"20",
+		{ "targets":[ 5 ],
 		"render": function(rarity, type, row, full) {
 		    if (type ==='display') {
 			return rarity+' <i class="fa fa-star"></i>';
@@ -1327,7 +1327,6 @@ $(document).ready( function(e) {
 		url: url.join(''),
 		dataType: 'jsonp',
 		success: function (quickData) {
-			alert(JSON.stringify(quickData));
 			serverUnitsCount=quickData.rows.length;
 			/*Prompt to Sync*/
 			if (serverUnitsCount > localUnitsCount)
@@ -2192,7 +2191,6 @@ var delay = (function(){
 <div id="disqus_thread"></div>
     <script type="text/javascript">
 	var disqus_shortname = 'bravefrontierpros';
-	var disqus_url = 'http://bravefrontierpros.tumblr.com/unitsdatabase';
 
 	(function() {
 	    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
