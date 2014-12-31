@@ -240,13 +240,13 @@ function initialize(fusionData) {
 				exclude: [ 'all' ],
 				groups: [
 			    {   title: "StrikeShot",
-				columns: [ 6,7 ] },
+				columns: [ 7,8 ] },
 			    {   title: "Bump Combo 1",
-				columns: [ 8,9,10 ] },
+				columns: [ 9,10,11 ] },
 			    {   title: "Bump Combo 2",
-				columns: [ 11,12,13 ] },
+				columns: [ 12,13,14 ] },
 			    {   title: "Max Stats",
-				columns: [ 14,15,16,17 ] } ]
+				columns: [ 15,16,17,18 ] } ]
 		  },
 		  "autoWidth": false,
 		  "deferRender": true,
@@ -304,8 +304,8 @@ function initialize(fusionData) {
 		  /*Parsing Fields via Datatables*/
 		  "columnDefs":[
 		{ "width": "250", "targets": [ 6,8,11 ] },
-		{ "visible": false, "targets": [ 11,12,13 ].concat(xtraDefCol) },
-		{ "searchable": false, "targets": [ 7,9,10,12,13,14,15,16,17 ] },
+		{ "visible": false, "targets": [ 12,13,14 ].concat(xtraDefCol) },
+		{ "searchable": false, "targets": [ 8,10,12,13,14,15,16,17,18 ] },
 		{ "orderData": [ 5, 0 ], "targets": [ 5 ] },
 		{ "orderData": [ 4, 0 ], "targets": [ 4 ] },
 		{ "orderData": [ 3, 0 ], "targets": [ 3 ] },
@@ -326,8 +326,8 @@ function initialize(fusionData) {
 		    }
 		}
 		},
-		/*Stats*/
-		{ "targets":[ 7,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 ],
+		/*Numerical Stats*/
+		{ "targets":[ 8,10,13,15,16,17,18 ],
 		"type": "num",
 		/*NaN check*/
 		"render": function(nanCol, type, row, full) {
@@ -336,15 +336,8 @@ function initialize(fusionData) {
 			} else { return nanCol; }
 		    }
 		},
-		/*Gender*/
-		{ "targets":[ 8 ],
-		"type": "string","width":"10",
-		"render": function(cGender, type, row, full) {
-			if (cGender=='Male') { return '<i class="fa fa-lg fa-male text-primary"></i>'; } else if (cGender=='Female') { return '<i class="fa fa-lg fa-female text-danger"></i>'; } else if (cGender=='Genderless') { return '<i class="fa fa-lg fa-android text-success"></i>'; } else if (cGender=='Paired(FF)') { return '<i class="fa fa-lg fa-female text-danger"></i><i class="fa fa-lg fa-female text-danger"></i>'; } else if (cGender=='Paired(MM)') { return '<i class="fa fa-lg fa-male text-primary"></i><i class="fa fa-lg fa-male text-primary"></i>'; } else if (cGender=='Paired(FM)') { return '<i class="fa fa-lg fa-male text-primary"></i><i class="fa fa-lg fa-female text-danger"></i>'; } else { return '<span class="fa-stack"><i class="fa fa-android fa-stack-2x text-muted"></i><i class="fa fa-question fa-stack-1x fa-inverse"></i></span>'; }
-		}
-		},
 		/*skills*/
-		{ "targets":[ 9,10,11,12 ],
+		{ "targets":[ 7,9,11,12,14 ],
 		"type": "string","width":"10",
 		"render": function(cString, type, row, full) {
 			if (cString==""||cString==null)
@@ -353,181 +346,10 @@ function initialize(fusionData) {
 				return cString;
 		}
 		},
-		{ "targets":[ 13 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="Normal Hits">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="Normal Hits">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 14 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="BB Hits">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="BB Hits">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 15 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="SBB Hits">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="SBB Hits">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 16 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="UBB Hits">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="UBB Hits">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 17 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="BB Fill">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="BB Fill">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 18 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="SBB Fill">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="SBB Fill">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
-		{ "targets":[ 19 ],
-		"type": "num",
-		/*NaN check*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			if ((isNaN(nanCol)) || (nanCol==0)) {
-			    return '<div class="statsInfo" data-toggle="tooltip" title="UBB Fill">'+'-'+'</div>';
-			} else { return '<div class="statsInfo" data-toggle="tooltip" title="UBB Fill">'+nanCol+'</div>'; }
-		    } else if (type === 'sort') {
-			if (isNaN(nanCol)) {
-			    return 0;
-			} else { return nanCol; }
-		    }
-		}
-		},
 		/*set as num type for sort*/
-		{ "targets":[ 0 ], "type": "num", "width": "20"
-		},
-		/*Wt Stats*/
-		{ "targets":[ 20 ],
-		"type": "num",
-		"width": "50",
-		/*NaN check n rounding*/
-		"render": function(nanCol, type, row, full) {
-		    if (type ==='display') {
-			    if (isNaN(nanCol)) {
-				return '<div class="statsInfo" data-toggle="tooltip" title="Weighted Stats (Lord)">'+'-'+'</div>';
-			    } else { return '<div class="statsInfo" data-toggle="tooltip" title="Weighted Stats (Lord)">'+Math.round(nanCol)+'</div>'; }
-		    } else if (type === 'sort') {
-			    if (isNaN(nanCol)) {
-				return "-";
-			    } else { return Math.round(nanCol); }
-			}
-		    }
-		},
-		/*Wt Pimped Stats*/
-		{ "targets":[ 21 ],
-		"type": "num",
-		"width": "50",
-		/*NaN check n rounding*/
-		"render": function(nanCol2, type, row, full) {
-		    if (type ==='display') {
-			    if (isNaN(nanCol2)) {
-				return '<div class="statsInfo" data-toggle="tooltip" title="Weighted Pimped Stats (Lord)">'+'-'+'</div>';
-			    } else { return '<div class="statsInfo" data-toggle="tooltip" title="Weighted Pimped Stats (Lord)">'+Math.round(nanCol2)+'</div>'; }
-		    } else if (type === 'sort') {
-			    if (isNaN(nanCol2)) {
-				return "-";
-			    } else { return Math.round(nanCol2); }
-		    	}
-		    }
-		},
-		/*Name + Video*/
-		{ "targets":[ 2 ],
-		"type": "string",
-		"render": function(name, type, cRow, full) {
-		    retString = '<a href="#" class="unitName notranslate">'+name+'</a>';
-		    if ( ( cRow[fusionData.columns.indexOf("Video")] != '' ) ){ retString += ' <a href="#" src="'+cRow[fusionData.columns.indexOf("Video")]+'" class="videoBtn"><i class="fa fa-video-camera"></i></a>' }
-		    return retString;
-		    }
-		},
-		/*Global Japan Release*/
-		{ "targets": [48,49],
-		"orderable": false,
-		"render": function(relVal, type, cRow, full) {
-	    if (relVal=="" || relVal=="TRUE") {
-			return "TRUE"; 
-	    } else {
-		return "FALSE";
-	    }
-		}
-		},
-		/*Aggregated Evolution Materials*/
-		{ "targets": [51],
-		"orderable": false,
-		"render": function(evoVal, type, cRow, full) {
-		    var evoString='<div style="white-space:nowrap;">';
-		    for (i=1;i<6;i++) {
-			evoString+='<img src="'+getEvoIMG(cRow[fusionData.columns.indexOf("Evo "+i)])+'" width="35"/> ';
-		    }
-		    evoString+='</div>';
-		    return evoString; }
-		},
+		{ "targets":[ 0 ], "type": "num","width": "20" },
 		/*Compare Column*/
-		{ "targets": [52],
+		{ "targets": [19],
 		"orderable": false,
 		"render": function(cBtn, type, cRow, full) {
 		    var rtnString='<div style="white-space:nowrap;"><a href="#" value="'+cRow[fusionData.columns.indexOf("Name")]+'" class="compareUnit"><div class="btn btn-success btn-sm"><i class="fa fa-plus"></i> <i class="fa fa-users"></i></div></a> ';
@@ -551,12 +373,6 @@ function initialize(fusionData) {
 		{ "targets":[ 3 ],
 		"render": function(seriesname, type, row, full) {
 		    return '<a href="#" class="serieslink">'+seriesname+'</a>';}
-		},
-		/*Batch*/
-		{ "targets":[ 4 ],
-		"orderable":false,
-		"render": function(batchname, type, row, full) {
-		    return '<a href="#" class="batchlink">'+batchname+'</a>';}
 		}]
 	}) /*End Datatables Init*/
 
@@ -1549,8 +1365,8 @@ cHTML+='<div class="form-inline"><select class="form-control input-sm sp2" id="s
 <script type="text/javascript">
 $(document).ready( function(e) {
     /*Favourite localStorage Retreival and storage*/
-    if (localStorage.favourites) {
-	window.favSelect=localStorage.favourites.split(',');
+    if (localStorage.msfavourites) {
+	window.favSelect=localStorage.msfavourites.split(',');
     } else {
 	window.favSelect=[];
     };
