@@ -169,7 +169,7 @@ function convertJSON( serialObj ) {
 		    temp[s.columns[j].toLowerCase()] = 0;
 		/*Call Unit Card*/
 		} else if (s.columns[j].toLowerCase().search("name") != -1) {
-		    temp[s.columns[j].toLowerCase()] = '<a href="#" class="unitName notranslate">'+s.rows[i][j]+'</a>';;
+		    temp[s.columns[j].toLowerCase()] = '<a href="#" class="unitName notranslate">'+s.rows[i][j]+'</a>';
 		} else { /*general string*/
 		    temp[s.columns[j].toLowerCase()] = s.rows[i][j];
 		}
