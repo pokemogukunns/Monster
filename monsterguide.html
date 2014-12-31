@@ -201,9 +201,9 @@ function initialize(fusionData) {
   } else { var xtraDefCol=[2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]; var pLength=50; }
   
 	/*Check for latest ver of Data with UBB*/
-	if (fusionData.columns.indexOf("UBB Fill")==-1) {
+	if (fusionData.columns.indexOf("ID")==-1) {
 		/*LocalStorage Delete and Refresh*/
-		alert("Data structure has changed for new 7* skills. UBB Fill now added. Click OK to upgrade.");
+		alert("Data structure has changed. Click OK to upgrade.");
 		localStorage.removeItem("msguideadvance");
 		localStorage.removeItem("msguideadvanceCount");
 		history.pushState(null, null, location.pathname);
