@@ -555,10 +555,8 @@ function initialize(fusionData) {
 	    }
 	    /*Card HTML output*/
 	      var ovHTML = 
-	      '<table class="table table-bordered table-condensed small" style="border-top:0px;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
-	      +'<td colspan="4" style="border:0px;"><h4><kbd>'+ovdata2[0]['id']+'</kbd>';
-	      ovHTML+='<b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet';
-	      ovHTML+='</small></h4></td></tr>';
+	      '<table class="table table-bordered table-condensed small" style="border-top:0px;border:1px sold #EEEEEE;"><tr><td style="text-align:center;vertical-align:middle;border:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
+	      +'<td colspan="4" style="border:0px;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
 	      ovHTML+='<tr><td colspan="5" class="purple"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
 	      /*strikeshot*/
 	      ovHTML+='<tr><td class="active"><b class="visible-xs-block">SS</b><b class="hidden-xs">Strike Shot</b></td><td colspan="4">'+ovdata2[0]['strikeshot']+" "+ovdata2[0]['strikeshot cooldown']+'</td></tr>';
@@ -573,12 +571,13 @@ function initialize(fusionData) {
 
 	/*evolution ascension*/
 	ovHTML+='<tr><td colspan="5" class="btn-default" style="text-align:center;"><strong>Evolution</strong></td></tr>';
+	ovHTML+='<tr><td colspan="5">reserved for evolution and ascension</td></tr>';
 	
 	      ovHTML+='<tr><td class="btn-default"></td>'
-	      +'<td class="btn-default" width="20%"><strong>HP</strong></td>'
-	      +'<td class="btn-default" width="20%"><strong>ATK</strong></td>'
-	      +'<td class="btn-default" width="20%"><strong>SPD</strong></td>'
-	      +'<td class="btn-default" width="20%"><strong>LUCK</strong></td></tr>';
+	      +'<td class="btn-default"><strong>HP</strong></td>'
+	      +'<td class="btn-default"><strong>ATK</strong></td>'
+	      +'<td class="btn-default"><strong>SPD</strong></td>'
+	      +'<td class="btn-default"><strong>LUCK</strong></td></tr>';
 	      
 	      ovHTML+='<tr><td class="active"><strong>LV 1</strong></td>'
 	      +'<td>'+ovdata2[0]['lv1_hp']+'</td>'
@@ -596,7 +595,7 @@ function initialize(fusionData) {
 	      +'<td id="pimpHP">'+ovdata2[0]['pimp_hp']+'</td>'
 	      +'<td id="pimpATK">'+ovdata2[0]['pimp_atk']+'</td>'
 	      +'<td id="pimpSPD">'+ovdata2[0]['pimp_spd']+'</td>'
-	      +'<td class="btn-default"><button type="button" class="btn btn-success btn-xs" id="pimpBtn" value="false">Pimp it!</button></td></tr>';
+	      +'<td><button type="button" class="btn btn-success btn-xs" id="pimpBtn" value="false">Pimp it!</button></td></tr>';
 
 	ovHTML+='<tr><td class="active"><strong>Acquire</strong></td><td colspan="5">'+ovdata2[0]['obtain']+'</td></tr>'
 	+'<tr><td colspan="5" style="height:50px;"><i class="fa fa-quote-left"></i><strong> Notes: </strong>';
@@ -1720,19 +1719,6 @@ $(document).on("click", "#execFilter", function(e){
 	    openCard($(this).text());
 	    e.preventDefault();
 	})
-/*Swip gestures on UnitCard
-   $("#cardModal").swiperight(function() {
-       var unitText=$("#previousUnit").children('a').text();
-	if (unitText!="") {
-	    openCard(unitText);
-	}
-    });
-   $("#cardModal").swipeleft(function() {  
-       var unitText=$("#nextUnit").children('a').text();
-	if (unitText!="") {
-	    openCard(unitText);
-	}
-    }); */
 	
 var delay = (function(){
   var timer = 0;
@@ -2125,10 +2111,8 @@ var delay = (function(){
 	
 	<!-- Nav tabs -->
 	<ul class="nav nav-tabs" role="tablist">
-	      <li class="active"><a href="#unitCardHome" role="tab" data-toggle="tab"><strong><i class="fa fa-book"></i> Unit Card</strong></a></li>
-	      <li><a href="#unitCardArt" role="tab" data-toggle="tab"><i class="fa fa-photo"></i> Unit Art</a></li>
-	      <li class="hidden-xs"><a href="#evolutionary" role="tab" data-toggle="tab"><i class="fa fa-rocket"></i> Evolutionary</a></li>
-	      <li class="hidden-xs"><a href="#unitCardSprite" role="tab" data-toggle="tab"><i class="fa fa-rocket"></i> Sprite Play</a></li>
+	      <li class="active"><a href="#unitCardHome" role="tab" data-toggle="tab"><strong><i class="fa fa-book"></i> Monster Card</strong></a></li>
+	      <li><a href="#unitCardArt" role="tab" data-toggle="tab"><i class="fa fa-photo"></i> Monster Art</a></li>
 	</ul>
 
 <!-- Tab panes -->
