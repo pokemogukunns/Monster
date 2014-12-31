@@ -1393,6 +1393,7 @@ $(document).ready( function(e) {
 		url: url.join(''),
 		dataType: 'jsonp',
 		success: function (quickData) {
+			alert(JSON.stringify(quickData));
 			serverUnitsCount=quickData.rows.length;
 			/*Prompt to Sync*/
 			if (serverUnitsCount > localUnitsCount)
