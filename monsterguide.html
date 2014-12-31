@@ -307,11 +307,15 @@ function initialize(fusionData) {
 		{ "orderData": [ 5, 0 ], "targets": [ 5 ] },
 		{ "orderData": [ 4, 0 ], "targets": [ 4 ] },
 		{ "orderData": [ 3, 0 ], "targets": [ 3 ] },
-		{ "orderData": [ 2, 0 ], "targets": [ 2 ] },
 		/*using data instead of render to set DATA for cache */
 		{ "targets": [ 1 ],"orderable": false, "width":"40",
 		"render": function (imgSource, type, cRow, full )  {
 			return '<a href="#" class="favIconLink" value="'+cRow[fusionData.columns.indexOf("Name")]+'">'+'<img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+imgSource+'.jpg" width="35" height="35" title="'+cRow[fusionData.columns.indexOf("Name")]+'"/></a>';
+		    }
+		},
+		{ "targets": [ 2 ],
+		"render": function (monster, type, cRow, full )  {
+			return '<a href="#" class="unitName notranslate">'+monster+</a>';
 		    }
 		},
 		/*Rarity*/
