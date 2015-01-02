@@ -623,7 +623,7 @@ function initialize(fusionData) {
 	ovHTML+='</td></tr></table>'
 	    $('#unitCardHome').html(ovHTML);
 	    /*image accordion*/
-	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12><img class="img-responsive center-block" src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" /></div></div>');
+	    $('#unitimageacc').html('<img class="img-responsive center-block" src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" />');
 	    setTimeout(gooShorten(location.protocol + '//' + compileURL, $('#cardShareURL')), 5000);
 	  }
 	})
