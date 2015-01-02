@@ -96,8 +96,8 @@
 	border:1px solid #DDD !important;
     }
     #monsterSummary {
-	top: -130px;
-	position: relative;
+    	top:300px;
+	position: absolute;
 	background: rgba(255,255,255,0.7);
     }
     #monsterGeneral {
@@ -558,8 +558,8 @@ function initialize(fusionData) {
 	    }
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
-	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" /></div></div>';
-	    ovHTML+='</div><div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
+	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><div style="position:inherit;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" />';
+	    ovHTML+='<div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h3></div></div>';
 		    /*rarity*/
@@ -570,6 +570,8 @@ function initialize(fusionData) {
 		    /*general data*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" id="monsterGeneral"><h4 style="margin-top:5px;"><b>Class:</b> '+ovdata2[0]['class']+' &middot; <b>Type:</b> '+ovdata2[0]['type']+'<br/><b>Ability:</b> '+ovdata2[0]['ability']+'</h4></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
+	    ovHTML+='</div></div></div>'; 
+	    ovHTML+='</div>'; /*end of primary container*/
 	    /*stats*/
 	    ovHTML+='<div class="container-responsive">';
 	    ovHTML+='<div class="row"><div class="col-xs-12">';
@@ -639,7 +641,7 @@ function initialize(fusionData) {
 	    ovHTML+='</div>';
 	    $('#unitCardHome').html(ovHTML);
 	    /*image accordion*/
-	    $('#unitimageacc').html('<img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" class="img-responsive" />');
+	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" class="img-responsive" /></div></div>');
 	    setTimeout(gooShorten(location.protocol + '//' + compileURL, $('#cardShareURL')), 5000);
 	  }
 	})
