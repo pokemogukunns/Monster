@@ -281,17 +281,8 @@ function initialize(fusionData) {
 			$('#mytable').show();
 			/*hide loader*/
 			$('#progressModal').modal('hide');
-	    		/*check for card param for UnitID*/
-			var idParam=urlParam('monsterid');
-			if ( (idParam != "") && ( idParam != null) ) {
-			    for (i in deserialdata) {
-				if (deserialdata[i].name.toLowerCase()==idParam.toLowerCase())
-				    var idParamName=deserialdata[i].name;
-			    }
-			    openCard(idParamName);
-			}
 			/*check for card param*/
-			var cardParam=urlParam('unit');
+			var cardParam=urlParam('monsterid');
 			if ( (cardParam != "") && ( cardParam != null) ) {
 			    openCard(cardParam);
 			    /*needed as show is not included in function*/
