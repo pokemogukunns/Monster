@@ -575,8 +575,7 @@ function initialize(fusionData) {
 	    ovHTML+='</div></div></div>'; 
 	    ovHTML+='</div>'; /*end of primary container*/
 	    /*stats container*/
-	    ovHTML+='<div class="container-responsive">';
-	    ovHTML+='<div class="row"><div class="col-xs-12">';
+	    ovHTML+='<div class="container-responsive"><div class="row"><div class="col-xs-12">';
 	    ovHTML+='<table id="statsTable" class="table table-bordered table-condensed small">';
 	    	/*sharing URL*/
 	    	ovHTML+='<tr><td colspan="5" class="shareLink"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
@@ -602,8 +601,21 @@ function initialize(fusionData) {
 		      +'<td></td></tr>';
 		ovHTML+='</table></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
-	    /*stats container*/
-	    ovHTML+='<div class="container-responsive">';
+	    /*strikeshot container*/
+	    ovHTML+='<div class="container-responsive"><div class="row"><div class="col-xs-12">';
+		    ovHTML+='<table class="table table-bordered table-condensed small">';
+		    ovHTML+='<tr><td class="btn-default" style="width:80%;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/label_strikeshot.png" /></td><td class="btn-default" style="width:20%;"><b>Cooldown</b></td></tr>';
+		    ovHTML+='<tr><td>'+ovdata2[0]['strikeshot']+'</td><td>'+ovdata2[0]['strikeshot cooldown']+'</td></tr>';
+		    ovHTML+='</table></div></div>';
+	    ovHTML+='</div>'; /*End of Container*/
+	    /*bumpcombo container*/
+	    ovHTML+='<div class="container-responsive"><div class="row"><div class="col-xs-12">';
+		    ovHTML+='<table class="table table-bordered table-condensed small">';
+		    ovHTML+='<tr><td class="btn-default" style="width:80%;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/label_bumpcombo.png" /></td><td class="btn-default" style="width:20%;"><b>Cooldown</b></td></tr>';
+		    ovHTML+='<tr><td>'+ovdata2[0]['bumpcombo1']+'</td><td>'+ovdata2[0]['bumpcombopower1']+'</td></tr>';
+		    if (ovdata2[0]['bumpcombo2'] != "" || ovdata2[0]['bumpcombo2'].toLowerCase() != "none")
+		    	ovHTML+='<tr><td>'+ovdata2[0]['bumpcombo2']+'</td><td>'+ovdata2[0]['bumpcombopower2']+'</td></tr>';
+		    ovHTML+='</table></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
 	    /*OLD Card HTML output*/
 	      ovHTML+= 
