@@ -96,7 +96,7 @@
 	border:1px solid #DDD !important;
     }
     #monsterSummary {
-	top: 220px;
+	top: 210px;
 	width: 100%;
 	margin: 0 auto 0 auto;
 	position: absolute;
@@ -563,9 +563,9 @@ function initialize(fusionData) {
 	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><div style="position:inherit;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" />';
 	    ovHTML+='<div class="container" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h3></div></div>';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <b><kbd>'+ovdata2[0]['id']+'</kbd> '+ovdata2[0]['name'].toUpperCase()+'</b></h3></div></div>';
 		    /*rarity*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center">';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" style="margin:5px 0 5px 0;">';
 		    for (i=0;i<ovdata2[0]['rarity'];i++)
 			ovHTML+='<img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/icon_star.png"/> '
 		    ovHTML+='</div></div>';
@@ -577,7 +577,7 @@ function initialize(fusionData) {
 	    /*stats container*/
 	    ovHTML+='<div class="container-responsive">';
 	    ovHTML+='<div class="row"><div class="col-xs-12">';
-	    ovHTML+='<table id="statsTable" class="table table-bordered table-condensed">';
+	    ovHTML+='<table id="statsTable" class="table table-bordered table-condensed small">';
 	    	/*sharing URL*/
 	    	ovHTML+='<tr><td colspan="5" class="shareLink"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
 		ovHTML+='<tr><td class="btn-default" style="width:20%;"></td>'
