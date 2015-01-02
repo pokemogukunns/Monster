@@ -92,6 +92,11 @@
 	border:1px solid #DDD !important;
 	border-right-width:1px !important;
     }
+    #monsterSummary {
+	top: -50px;
+	position: relative;
+	background: rgba(255,255,255,0.8);
+    }
     </style>
 <!-- START JSON Code-->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -548,11 +553,11 @@ function initialize(fusionData) {
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
 	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" /></div></div>';
-	    ovHTML+='</div><div class="container-responsive" style="top:-100px;">'; /*Start and End of Container*/
+	    ovHTML+='</div><div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h2><b><kbd>'+ovdata2[0]['id']+'</kbd> '+ovdata2[0]['name'].toUpperCase()+'</b></h2></div></div>';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h2><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" width="25"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h2></div></div>';
 		    /*rarity*/
-		    ovHTML+='<div class="row"><div class="col-xs-2"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png"/></div><div class="col-xs-10 text-center">';
+		    ovHTML+='<div class="row"><div class="col-xs-12">';
 		    for (i=0;i<ovdata2[0]['rarity'];i++)
 			ovHTML+='<img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/icon_star.png"/> '
 		    ovHTML+='</div></div>';
