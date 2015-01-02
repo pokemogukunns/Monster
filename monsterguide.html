@@ -562,7 +562,7 @@ function initialize(fusionData) {
 	    }
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
-	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><div style="position:inherit;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" />';
+	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><div style="position:inherit;"><img class="img-responsive center-block" src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" />';
 	    ovHTML+='<div class="container" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> '+ovdata2[0]['name'].toUpperCase()+'</b> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/></h3></div></div>';
@@ -623,7 +623,7 @@ function initialize(fusionData) {
 	ovHTML+='</td></tr></table>'
 	    $('#unitCardHome').html(ovHTML);
 	    /*image accordion*/
-	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" /></div></div>');
+	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12><img class="img-responsive center-block" src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" /></div></div>');
 	    setTimeout(gooShorten(location.protocol + '//' + compileURL, $('#cardShareURL')), 5000);
 	  }
 	})
