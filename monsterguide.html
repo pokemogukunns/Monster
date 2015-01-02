@@ -572,12 +572,6 @@ function initialize(fusionData) {
 	      +'<td class="btn-default"><strong>SPD</strong></td>'
 	      +'<td class="btn-default"><strong>LUCK</strong></td></tr>';
 	      
-	      ovHTML+='<tr><td class="active"><strong>LV 1</strong></td>'
-	      +'<td>'+ovdata2[0]['lv1_hp']+'</td>'
-	      +'<td>'+ovdata2[0]['lv1_atk']+'</td>'
-	      +'<td>'+ovdata2[0]['lv1_spd']+'</td>'
-	      +'<td></td></tr>';
-	      
 	      ovHTML+='<tr><td class="active"><strong>MAX</strong></td>'
 	      +'<td class="hpMod">'+ovdata2[0]['max_hp']+'</td>'
 	      +'<td class="atkMod">'+ovdata2[0]['max_atk']+'</td>'
@@ -588,7 +582,13 @@ function initialize(fusionData) {
 	      +'<td id="pimpHP">'+ovdata2[0]['pimp_hp']+'</td>'
 	      +'<td id="pimpATK">'+ovdata2[0]['pimp_atk']+'</td>'
 	      +'<td id="pimpSPD">'+ovdata2[0]['pimp_spd']+'</td>'
-	      +'<td><button type="button" class="btn btn-success btn-xs" id="pimpBtn" value="false">Pimp it!</button></td></tr>';
+	      +'<td></td></tr>';
+	      
+	      ovHTML+='<tr><td class="active"><strong>LV 1</strong></td>'
+	      +'<td>'+ovdata2[0]['maxlimit_hp']+'</td>'
+	      +'<td>'+ovdata2[0]['maxlimit_atk']+'</td>'
+	      +'<td>'+ovdata2[0]['maxlimit_spd']+'</td>'
+	      +'<td></td></tr>';
 
 	ovHTML+='<tr><td class="active"><strong>Acquire</strong></td><td colspan="5">'+ovdata2[0]['obtain']+'</td></tr>'
 	+'<tr><td colspan="5" style="height:50px;"><i class="fa fa-quote-left"></i><strong> Notes: </strong>';
