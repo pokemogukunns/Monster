@@ -309,7 +309,7 @@ function initialize(fusionData) {
 		      "info": "_START_ to _END_ / _TOTAL_ Units Found" },
 		  /*Parsing Fields via Datatables*/
 		  "columnDefs":[
-		{ "width": "250", "targets": [ 7,9,12 ] },
+		{ "width": "225", "targets": [ 7,9,12 ] },
 		{ "visible": false, "targets": [ 12,13,14 ].concat(xtraDefCol) },
 		{ "searchable": false, "targets": [ 8,10,12,13,14,15,16,17,18 ] },
 		{ "orderData": [ 5, 0 ], "targets": [ 5 ] },
@@ -321,7 +321,7 @@ function initialize(fusionData) {
 			return '<a href="#" class="favIconLink" value="'+cRow[fusionData.columns.indexOf("Name")]+'">'+'<img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+imgSource+'.jpg" width="35" height="35" title="'+cRow[fusionData.columns.indexOf("Name")]+'"/></a>';
 		    }
 		},
-		{ "targets": [ 2 ],
+		{ "targets": [ 2 ], "width":"150",
 		"render": function (monster, type, cRow, full )  {
 			return '<a href="#" class="unitName notranslate">'+monster+'</a>';
 		    }
