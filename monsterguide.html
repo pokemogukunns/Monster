@@ -92,13 +92,16 @@
 	border:1px solid #DDD !important;
 	border-right-width:1px !important;
     }
-    #monsterSummaryWater {
+    #statsTable td {
+	border:1px solid #DDD !important;
+    }
+    #monsterSummary {
 	top: -130px;
 	position: relative;
-	background: rgba(0,200,255,0.7);
+	background: rgba(255,255,255,0.7);
     }
-    #monsterGeneralWater {
-	background: rgba(0,200,255,0.5);
+    #monsterGeneral {
+	background: rgba(255,255,255,0.5);
     }
     </style>
 <!-- START JSON Code-->
@@ -556,7 +559,7 @@ function initialize(fusionData) {
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
 	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" /></div></div>';
-	    ovHTML+='</div><div class="container-responsive" id="monsterSummary'+ovdata2[0]['element']+'">'; /*Start and End of Container*/
+	    ovHTML+='</div><div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h3></div></div>';
 		    /*rarity*/
@@ -565,7 +568,34 @@ function initialize(fusionData) {
 			ovHTML+='<img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/icon_star.png"/> '
 		    ovHTML+='</div></div>';
 		    /*general data*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" id="monsterGeneral'+ovdata2[0]['element']+'"><h4 style="margin-top:5px;"><b>Class:</b> '+ovdata2[0]['class']+' &middot; <b>Type:</b> '+ovdata2[0]['type']+'<br/><b>Ability:</b> '+ovdata2[0]['ability']+'</h4></div></div>';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" id="monsterGeneral"><h4 style="margin-top:5px;"><b>Class:</b> '+ovdata2[0]['class']+' &middot; <b>Type:</b> '+ovdata2[0]['type']+'<br/><b>Ability:</b> '+ovdata2[0]['ability']+'</h4></div></div>';
+	    ovHTML+='</div>'; /*End of Container*/
+	    /*stats*/
+	    ovHTML+='<div class="container-responsive">';
+	    ovHTML+='<div class="row"><div class="col-xs-12">';
+	    ovHTML+= 
+	      '<table id="statsTable" class="table table-bordered table-condensed">
+		ovHTML+='<tr><td class="btn-default" style="width:20%;"></td>'
+		      +'<td class="btn-default" style="width:20%;"><strong>HP</strong></td>'
+		      +'<td class="btn-default" style="width:20%;"><strong>ATK</strong></td>'
+		      +'<td class="btn-default" style="width:20%;"><strong>SPD</strong></td>'
+		      +'<td class="btn-default" style="width:20%;"><strong>LUCK</strong></td></tr>';
+	      ovHTML+='<tr><td class="active"><strong>MAX</strong></td>'
+		      +'<td class="hpMod">'+ovdata2[0]['max_hp']+'</td>'
+		      +'<td class="atkMod">'+ovdata2[0]['max_atk']+'</td>'
+		      +'<td class="spdMod">'+ovdata2[0]['max_spd']+'</td>'
+		      +'<td>'+ovdata2[0]['max_luck']+'</td></tr>';
+	      ovHTML+='<tr><td class="active"><strong>Pimp Limit</strong></td>'
+		      +'<td id="pimpHP"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_hp']+'</td>'
+		      +'<td id="pimpATK"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_atk']+'</td>'
+		      +'<td id="pimpSPD"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_spd']+'</td>'
+		      +'<td></td></tr>';
+	      ovHTML+='<tr><td class="active"><strong>Max Pimped</strong></td>'
+		      +'<td>'+ovdata2[0]['maxlimit_hp']+'</td>'
+		      +'<td>'+ovdata2[0]['maxlimit_atk']+'</td>'
+		      +'<td>'+ovdata2[0]['maxlimit_spd']+'</td>'
+		      +'<td></td></tr>';
+		ovHTML+='</table></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
 	    /*OLD Card HTML output*/
 	      ovHTML+= 
@@ -586,30 +616,6 @@ function initialize(fusionData) {
 	/*evolution ascension*/
 	ovHTML+='<tr><td colspan="5" class="btn-default" style="text-align:center;"><strong>Evolution</strong></td></tr>';
 	ovHTML+='<tr><td colspan="5">reserved for evolution and ascension</td></tr>';
-	
-	      ovHTML+='<tr><td class="btn-default"></td>'
-	      +'<td class="btn-default"><strong>HP</strong></td>'
-	      +'<td class="btn-default"><strong>ATK</strong></td>'
-	      +'<td class="btn-default"><strong>SPD</strong></td>'
-	      +'<td class="btn-default"><strong>LUCK</strong></td></tr>';
-	      
-	      ovHTML+='<tr><td class="active"><strong>MAX</strong></td>'
-	      +'<td class="hpMod">'+ovdata2[0]['max_hp']+'</td>'
-	      +'<td class="atkMod">'+ovdata2[0]['max_atk']+'</td>'
-	      +'<td class="spdMod">'+ovdata2[0]['max_spd']+'</td>'
-	      +'<td>'+ovdata2[0]['max_luck']+'</td></tr>';
-	      
-	      ovHTML+='<tr><td class="active"><strong>Pimp Limit</strong></td>'
-	      +'<td id="pimpHP"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_hp']+'</td>'
-	      +'<td id="pimpATK"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_atk']+'</td>'
-	      +'<td id="pimpSPD"><i class="fa fa-plus"></i> '+ovdata2[0]['pimp_spd']+'</td>'
-	      +'<td></td></tr>';
-	      
-	      ovHTML+='<tr><td class="active"><strong>Max Pimped</strong></td>'
-	      +'<td>'+ovdata2[0]['maxlimit_hp']+'</td>'
-	      +'<td>'+ovdata2[0]['maxlimit_atk']+'</td>'
-	      +'<td>'+ovdata2[0]['maxlimit_spd']+'</td>'
-	      +'<td></td></tr>';
 
 	ovHTML+='<tr><td class="active"><strong>Acquire</strong></td><td colspan="5">'+ovdata2[0]['obtain']+'</td></tr>'
 	+'<tr><td colspan="5" style="height:50px;"><i class="fa fa-quote-left"></i><strong> Notes: </strong>';
