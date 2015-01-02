@@ -97,7 +97,7 @@
 	position: relative;
 	background: rgba(0,200,255,0.7);
     }
-    #monsterGeneral {
+    #monsterGeneralWater {
 	background: rgba(0,200,255,0.5);
     }
     </style>
@@ -556,7 +556,7 @@ function initialize(fusionData) {
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
 	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" height="auto" /></div></div>';
-	    ovHTML+='</div><div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
+	    ovHTML+='</div><div class="container-responsive" id="monsterSummary'+ovdata2[0]['element']+'">'; /*Start and End of Container*/
 		/*Name*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h3 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/ele_'+ovdata2[0]['element'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h3></div></div>';
 		    /*rarity*/
@@ -565,7 +565,7 @@ function initialize(fusionData) {
 			ovHTML+='<img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/icon_star.png"/> '
 		    ovHTML+='</div></div>';
 		    /*general data*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" id="monsterGeneral"><h4 style="margin-top:5px;"><b>Class:</b> '+ovdata2[0]['class']+' &middot; <b>Type:</b> '+ovdata2[0]['type']+'<br/><b>Ability:</b> '+ovdata2[0]['ability']+'</h4></div></div>';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center" id="monsterGeneral'+ovdata2[0]['element']+'"><h4 style="margin-top:5px;"><b>Class:</b> '+ovdata2[0]['class']+' &middot; <b>Type:</b> '+ovdata2[0]['type']+'<br/><b>Ability:</b> '+ovdata2[0]['ability']+'</h4></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
 	    /*OLD Card HTML output*/
 	      ovHTML+= 
