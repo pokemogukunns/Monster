@@ -16,6 +16,12 @@
 
     <!-- Custom styles for this template -->
     <style type="text/css">
+.logoShdw {
+-webkit-filter: drop-shadow(0px 0px 6px #FF3300);
+filter: drop-shadow(0px 0px 5px #FF3300);
+margin-top:-8px;
+margin-left:-4px;
+}
     .affix { position:fixed;left:0px;top:40px;width:100%;z-index:50;background:#E6CCFF;padding:30px 10px 0px 10px;margin:0;box-shadow: 0 4px 4px -2px #888888;; }
     .affix-top { position:static; }
     .evoShdw {
@@ -622,38 +628,11 @@ function initialize(fusionData) {
 		    	ovHTML+='<tr><td>'+ovdata2[0]['bumpcombo2']+'</td><td>'+ovdata2[0]['bumpcombopower2']+'</td></tr>';
 		    ovHTML+='</table></div></div>';
 	    ovHTML+='</div>'; /*End of Container*/
-	    /*OLD Card HTML output*/
-	      ovHTML+= 
-	      '<table id="monsterTable" class="table table-bordered table-condensed small" style="border-top-width:0px !important;"><tr><td style="text-align:center;vertical-align:middle;border:0px !important;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
-	      +'<td colspan="4" style="border:0px !important;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
-	      ovHTML+='<tr><td colspan="5" class="shareLink"><i class="fa fa-share-alt"></i> <b>Sharing URL: </b>'+ovshareURL+'</td></tr>';
-	      /*strikeshot*/
-	      ovHTML+='<tr><td class="active"><b class="visible-xs-block">SS</b><b class="hidden-xs">Strike Shot</b></td><td colspan="4">'+ovdata2[0]['strikeshot']+" "+ovdata2[0]['strikeshot cooldown']+'</td></tr>';
-	      /*check bump combo1*/
-	      if (ovdata2[0]['bumpcombo1'] != "") {
-		    ovHTML+='<tr><td class="active"><b class="visible-xs-block">BC1</b><b class="hidden-xs">Bump Combo 1</b></td><td colspan="4">'+ovdata2[0]['bumpcombo1']+" "+ovdata2[0]['bumpcombopower1']+ovdata2[0]['bumpcombotype1']+'</td></tr>';
-	      }
-	      /*check bump combo2*/
-	      if (ovdata2[0]['bumpcombo2'] != "") {
-		    ovHTML+='<tr><td class="active"><b class="visible-xs-block">BC1</b><b class="hidden-xs">Bump Combo 1</b></td><td colspan="4">'+ovdata2[0]['bumpcombo2']+" "+ovdata2[0]['bumpcombopower2']+ovdata2[0]['bumpcombotype2']+'</td></tr>';
-	      }
-
-	/*evolution ascension*/
-	ovHTML+='<tr><td colspan="5" class="btn-default" style="text-align:center;"><strong>Evolution</strong></td></tr>';
-	ovHTML+='<tr><td colspan="5">reserved for evolution and ascension</td></tr>';
-
-	ovHTML+='<tr><td class="active"><strong>Acquire</strong></td><td colspan="5">'+ovdata2[0]['obtain']+'</td></tr>'
-	+'<tr><td colspan="5" style="height:50px;"><i class="fa fa-quote-left"></i><strong> Notes: </strong>';
-	
-	if (ovdata2[0]['pro_notes']!='')
-	    ovHTML+=ovdata2[0]['pro_notes'];
-	else
-	    ovHTML+='<i>None at the moment.<i>';
 	    
 	ovHTML+='</td></tr></table>'
 	    $('#unitCardHome').html(ovHTML);
 	    /*image accordion*/
-	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" class="img-responsive" /></div></div>');
+	    $('#unitimageacc').html('<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" /></div></div>');
 	    setTimeout(gooShorten(location.protocol + '//' + compileURL, $('#cardShareURL')), 5000);
 	  }
 	})
@@ -930,7 +909,7 @@ cHTML+='<div class="form-inline"><select class="form-control input-sm sp2" id="s
 	    <span class="icon-bar"></span>
 	    <span class="icon-bar"></span>
 	  </button>
-	  <a class="navbar-brand" href="http://bravefrontierpros.tumblr.com"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/logo_ms.png" class="img-circle" style="margin-top:-8px;margin-left:-4px;box-shadow:2px 2px 1px;" width="64" alt="Monster Strike PROs"/></a>
+	  <a class="navbar-brand" href="http://bravefrontierpros.tumblr.com"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/logo_ms.png" class="img-circle logoShdw" width="64" alt="Monster Strike PROs"/></a>
 	</div>
 	
 	<!-- Collapse Nav-->
