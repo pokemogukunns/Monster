@@ -258,7 +258,7 @@ function initialize(fusionData) {
 			/*hide loader*/
 			$('#progressModal').modal('hide');
 	    		/*check for card param for UnitID*/
-			var idParam=urlParam('unitid');
+			var idParam=urlParam('monsterid');
 			if ( (idParam != "") && ( idParam != null) ) {
 			    for (i in deserialdata) {
 				if (deserialdata[i].id==idParam)
@@ -547,9 +547,19 @@ function initialize(fusionData) {
 	    }
 	    /*New Card Design via DIV*/
 	    ovHTML='<div class="container-responsive">';
-	    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" /></div></div>';
-	    ovHTML+='</div>';
-	    /*Card HTML output*/
+	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" /></div></div>';
+	    ovHTML+='</div><div class="container-responsive" style="top:-40px;">'; /*Start and End of Container*/
+		    /*rarity*/
+		    ovHTML+='<div class="row"><div class="col-xs-2"><img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png"/></div><div class="col-xs-10 text-center">';
+		    for (i=0;i<ovdata2[0]['rarity'];i++)
+		    	ovHTML+ovHTML+='<img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/icon_star.png"/>'
+		    ovHTML+='</div></div>';
+		    /*general data*/
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><b>Class:</b> '+ovdata2[0]['class']+' <b>Type:</b> '+ovdata2[0]['type']+'</div></div>';
+		    /*Ability*/
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><b>Ability:</b> '+ovdata2[0]['ability']+'</div></div>';
+	    ovHTML+='</div>'; /*End of Container*/
+	    /*OLD Card HTML output*/
 	      ovHTML+= 
 	      '<table id="monsterTable" class="table table-bordered table-condensed small" style="border-top-width:0px !important;"><tr><td style="text-align:center;vertical-align:middle;border:0px !important;"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/icon'+ovdata2[0]['id']+'.jpg" width="60"/></td>'
 	      +'<td colspan="4" style="border:0px !important;"><h4><kbd>'+ovdata2[0]['id']+'</kbd> <b>'+ovdata2[0]['name']+'</b><br/><small><b>'+ovdata2[0]['rarity']+'</b><i class="fa fa-star"></i> &middot; <b>Max lv:</b> '+'none yet</small></h4></td></tr>';
