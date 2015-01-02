@@ -285,8 +285,8 @@ function initialize(fusionData) {
 			var idParam=urlParam('monsterid');
 			if ( (idParam != "") && ( idParam != null) ) {
 			    for (i in deserialdata) {
-				if (deserialdata[i].id==idParam)
-				    var idParamName=$(deserialdata[i].name).text();
+				if (deserialdata[i].name.toLowerCase()==idParam.toLowerCase())
+				    var idParamName=deserialdata[i].name;
 			    }
 			    openCard(idParamName);
 			}
