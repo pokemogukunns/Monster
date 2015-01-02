@@ -98,7 +98,6 @@
 	position: relative;
 	background: rgba(255,255,255,0.7);
     }
-    #monsterSummary h2 { font-family:font-family: 'Oswald', sans-serif; }
     #monsterGeneral {
 	background: rgba(255,255,255,0.5);
     }
@@ -561,7 +560,7 @@ function initialize(fusionData) {
 	    	ovHTML+='<div class="row"><div class="col-xs-12 text-center"><img src="https://googledrive.com/host/0B4hJr8BXxvFZQk5YNzdVR3JFSXM/unit'+ovdata2[0]['id']+'.png" width="350" /></div></div>';
 	    ovHTML+='</div><div class="container-responsive" id="monsterSummary">'; /*Start and End of Container*/
 		/*Name*/
-		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h2 style="margin-bottom:0px;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h2></div></div>';
+		    ovHTML+='<div class="row"><div class="col-xs-12 text-center"><h2 style="margin-bottom:0px;font-family:font-family: 'Oswald', sans-serif;"><b><kbd>'+ovdata2[0]['id']+'</kbd> <img src="https://googledrive.com/host/0B4hJr8BXxvFZZkZKQzkwUXpXdkU/impact_'+ovdata2[0]['impact type'].toLowerCase()+'.png" style="width:38px;vertical-alignment:top;"/> '+ovdata2[0]['name'].toUpperCase()+'</b></h2></div></div>';
 		    /*rarity*/
 		    ovHTML+='<div class="row"><div class="col-xs-12 text-center">';
 		    for (i=0;i<ovdata2[0]['rarity'];i++)
